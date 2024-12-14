@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="width: 100%;height: auto;" class="row row-cols-1 row-cols-md-3 g-4 ">
+     {%for post2 in object_list%}
+    <div style="display: flex;align-items: center;justify-content: space-around; width: 700px;height: 700px;" class="col  "> 
+      
+      <div class="card " style="width: 300px;height: 100px;" >
+        <img src="{{post2.imglar.url}}" style="width: 300px;height: 200px;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 style="color:white;" class="card-title">ismi:{{post2.titlelar}}</h5>
+          <p style="color:white;" class="card-text">malumot:{{post2.textlar}}</p>
+          <p style="color:white;" class="card-number">narxi:{{post2.numberlar  }}$</p>
+          <a href="{% url 'abaut_detail' post2.pk %}"><button style="display: block;filter: drop-shadow(0 0 10px white);"">Batafsil</button></a>
+        </div>
+      </div> 
+         
+    </div>
+{%endfor%}
+  </div>  
+
+
+  {% endblock content %}

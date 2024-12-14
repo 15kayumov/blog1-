@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="width: 100%; height: 500px ;display:flex;align-items: center;justify-content: center;" class="row row-cols-1 row-cols-md-3 g-4 ">
+
+<div  class="col "> 
+      
+    <div class="card " style="width: 800px;height: auto;display: flex;align-items: center;justify-content: space-between;" >
+      {%if post.img %}
+
+      <img style="width: 400px; height: 300px;" src="{{post.img.url}}" class="card-img-top" alt="...">
+      {%endif%}
+
+      <div style="border: 2px solid;"  class="card-body ">
+        <h5 class="card-title">ismi:{{post.title}}</h5>
+        <p class="card-text">bataffsil:{{post.text}}</p>
+        <p class="card-text">narxi:{{post.number}}</p>
+       <button  class="btn btn-outline-danger" type="submit"> <a style="color: black;" href="{%url 'post_delete' post.pk %}">udalit</a></button>
+       <button  class="btn btn-outline-success" type="submit"><a style="color: black;" href="{%url 'post_edit' post.pk %}">post taxlash</a></button> 
+
+      </div>
+    </div> 
+       
+  </div>
+</div>
+{% endblock content %}

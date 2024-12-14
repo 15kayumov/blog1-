@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="width: 100%;height: auto;" class="row row-cols-1 row-cols-md-3 g-10 ">
+     {%for post in object_list%}
+    <div style="display: flex;align-items: center;justify-content: space-around; width: 700px;height: 700px;" class="col  "> 
+      
+      <div class="card " style="width: 300px;height: 100px;" >
+        {%if post.img %}
+        <img src="{{post.img.url}}" style="width: 300px;height: 200px;" class="card-img-top" alt="...">
+        {%endif%}
+        <div class="card-body">
+          <h5 style="color:white;" class="card-title">ismi:{{post.title}}</h5>
+          <p style="color:white;" class="card-text">malumot:{{post.text}}</p>
+          <p style="color:white;" class="card-number">narxi:{{post.number}}$</p>
+          <a href="{% url 'post_detail' post.pk %}"><button style="display: block;filter: drop-shadow(0 0 10px white);"">Batafsil</button></a>
+        </div>
+      </div> 
+         
+    </div>
+{%endfor%}
+  </div>  
+
+
+  {% endblock content %}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <style>
+      /* Barcha sahifaga umumiy stil */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f3f4f6;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Sign Up konteyneri */
+      .signup-container {
+        width: 100%;
+        max-width: 400px;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .signup-container h2 {
+        margin-bottom: 20px;
+        color: #333333;
+      }
+
+      /* Inputlar */
+      .signup-container input[type="text"],
+      .signup-container input[type="email"],
+      .signup-container input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .signup-container input[type="text"]:focus,
+      .signup-container input[type="email"]:focus,
+      .signup-container input[type="password"]:focus {
+        border-color: #6c63ff;
+      }
+
+      /* Sign Up tugmasi */
+      .signup-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #6c63ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .signup-container button:hover {
+        background-color: #5853d3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <h2>Sign Up</h2>
+      <form action="" method="post">
+        {% csrf_token %} {{form.as_p}}
+        <button type="submit">Kirish</button>
+        <h3>
+          agar saytimizga uje registratsiya qigan bosayiz pastdagi yozuvni
+          bosing
+        </h3>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="{% url 'login' %}"
+            >login</a
+          >
+        </li>
+      </form>
+    </div>
+  </body>
+</html>

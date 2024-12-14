@@ -1,0 +1,46 @@
+<div
+  style="
+    width: 100%;
+    height: auto;
+    background: url(../static/img/xadniyfon2.jpg);
+  "
+>
+  <div
+    style="
+      width: 100%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    "
+    class="row row-cols-1 row-cols-md-3 g-4"
+  >
+    <div class="col">
+      <div
+        class="card"
+        style="
+          width: 800px;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <img
+          style="width: 400px; height: 300px"
+          src="{{post2.imglar.url}}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div style="border: 2px solid" class="card-body">
+          <h5 class="card-title">ismi:{{post2.titlelar}}</h5>
+          <p class="card-text">malumot:{{post2.textlar}}</p>
+          <p class="card-text">narxi:{{post2.numberlar}}$</p>
+          <a style="color: black" href="{%url 'abaut_delete' post2.pk %}"
+            >udalit</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
